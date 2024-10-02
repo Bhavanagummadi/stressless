@@ -1,0 +1,70 @@
+/* TherapistPage.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffefef; /* Light peach background */
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title Styles */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #d04068; /* Dark pink color */
+}
+
+/* Therapist Grid Styles */
+.therapist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Therapist Card Styles */
+.therapist-card {
+    background: #fff; /* White background for cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.therapist-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.therapist-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.therapist-name {
+    font-size: 1.5rem;
+    color: #d04068; /* Dark pink color */
+    margin: 10px 0;
+}
+
+.therapist-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.therapist-qualification {
+    font-size: 0.9rem;
+    color: #888;
+}

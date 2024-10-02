@@ -1,0 +1,316 @@
+/* ============= GLOBAL CSS =============== */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+} /* 16px */
+
+:root {
+  /* colors */
+  --primary-50: #ffe3ec; /* Light Pink */
+  --primary-100: #fbb3c1; /* Light Peach */
+  --primary-200: #f78da7; /* Medium Pink */
+  --primary-300: #f45b82; /* Pink */
+  --primary-400: #f24f70; /* Dark Pink */
+  --primary-500: #f12a56; /* Deep Pink */
+  --primary-600: #d7284d; /* Darker Pink */
+  --primary-700: #b92643; /* Even Darker Pink */
+  --primary-800: #9b1c38; /* Very Dark Pink */
+  --primary-900: #76142a; /* Darkest Pink */
+
+  /* peach */
+  --peach-50: #fff5f0; /* Very Light Peach */
+  --peach-100: #ffebd0; /* Light Peach */
+  --peach-200: #ffddc5; /* Medium Light Peach */
+  --peach-300: #ffccab; /* Peach */
+  --peach-400: #ffb28a; /* Dark Peach */
+  --peach-500: #ff9f6b; /* Darker Peach */
+  --peach-600: #ff8b4d; /* Even Darker Peach */
+  --peach-700: #ff7f2f; /* Deep Peach */
+  --peach-800: #ff6f1c; /* Darker Deep Peach */
+  --peach-900: #ff5a00; /* Very Dark Peach */
+
+  /* grey */
+  --grey-50: #f7f7f9; /* Very Light Grey */
+  --grey-100: #eaecef; /* Light Grey */
+  --grey-200: #d0d4d8; /* Medium Light Grey */
+  --grey-300: #a6abb1; /* Grey */
+  --grey-400: #73777c; /* Dark Grey */
+  --grey-500: #4f5458; /* Darker Grey */
+  --grey-600: #34383c; /* Even Darker Grey */
+  --grey-700: #22272a; /* Almost Black */
+  --grey-800: #1e2124; /* Near Black */
+  --grey-900: #0f1114; /* Very Dark Black */
+
+  /* rest of the colors */
+  --black: #222;
+  --white: #fff;
+
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+
+  --border-radius: 0.25rem;
+  --letter-spacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --fluid-width: 90vw;
+  --nav-height: 6rem;
+
+  /* box shadow */
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-4: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+  /* DARK MODE */
+  --dark-mode-bg-color: #2a2a2a;
+  --dark-mode-text-color: #e0e0e0;
+  --dark-mode-bg-secondary-color: #3c3c3c;
+  --dark-mode-text-secondary-color: var(--grey-300);
+
+  --background-color: var(--peach-50);
+  --text-color: var(--grey-900);
+  --background-secondary-color: var(--white);
+  --text-secondary-color: var(--grey-500);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+}
+
+h5 {
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
+}
+
+.text {
+  margin-bottom: 1.5rem;
+  max-width: 40em;
+}
+
+small,
+.text-small {
+  font-size: var(--small-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* buttons */
+.btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--primary-500);
+  border: transparent;
+  border-radius: var(--border-radius);
+  letter-spacing: var(--letter-spacing);
+  padding: 0.375rem 0.75rem;
+  box-shadow: var(--shadow-1);
+  transition: background 0.3s, transform 0.2s; /* Added transform */
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: var(--primary-700);
+  box-shadow: var(--shadow-3);
+  transform: translateY(-2px); /* Added lift effect */
+}
+
+.btn-hipster {
+  color: var(--primary-500);
+  background: var(--primary-200);
+}
+
+.btn-hipster:hover {
+  color: var(--primary-200);
+  background: var(--primary-700);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+button:disabled {
+  cursor: wait;
+}
+
+.danger-btn {
+  color: var(--red-dark);
+  background: var(--red-light);
+}
+
+.danger-btn:hover {
+  color: var(--white);
+  background: var(--red-dark);
+}
+
+/* alerts */
+.alert {
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 1rem;
+  border-color: transparent;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-1); /* Add shadow for depth */
+}
+
+.alert-danger {
+  color: var(--red-dark);
+  background: var(--red-light);
+}
+
+.alert-success {
+  color: var(--green-dark);
+  background: var(--green-light);
+}
+
+/* form */
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--background-secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin: 3rem auto;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--small-text);
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+  line-height: 1.5;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--border-radius);
+  background: var(--white); /* Use white background for inputs */
+  border: 1px solid var(--grey-300);
+  color: var(--text-color);
+  box-shadow: var(--shadow-1); /* Add shadow */
+}
+
+.form-input,
+.form-select,
+.form-btn {
+  height: 35px;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letter-spacing);
+  text-transform: capitalize;
+}
+
+/* alert */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid var(--grey-400);
+  border-radius: 50%;
+  border-top-color: var(--primary-500);
+  animation: spinner 0.6s linear infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .form {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .form-label {
+    font-size: var(--extra-small-text);
+  }
+
+  .form-input,
+  .form-select,
+  .form-btn {
+    height: 30px;
+  }
+
+  .loading {
+    width: 4rem;
+    height: 4rem;
+  }
+}
